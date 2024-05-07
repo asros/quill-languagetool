@@ -14,6 +14,7 @@ export type QuillLanguageToolParams = {
   cooldownTime: number;
   showLoadingIndicator: boolean;
   apiOptions?: Partial<LanguageToolApiParams>;
+  authorization: string;
 };
 
 /**
@@ -28,6 +29,7 @@ export class QuillLanguageTool {
     cooldownTime: 3000,
     showLoadingIndicator: true,
     apiOptions: {},
+    authorization: ""
   };
 
   protected typingCooldown?: NodeJS.Timeout;
@@ -116,6 +118,7 @@ export class QuillLanguageTool {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: this.params.authorization,
         },
         mode: "cors",
         body: params,

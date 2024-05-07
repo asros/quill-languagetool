@@ -9,6 +9,7 @@ const modules = {
     apiOptions: {
       level: "picky",
     },
+    authorization: 'YOUR TOKEN'
   },
 };
 
