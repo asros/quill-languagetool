@@ -1,10 +1,10 @@
 {
-  "name": "quill-languagetool",
+  "name": "asros-quill-languagetool",
   "version": "1.0.7",
-  "description": "LanguageTool integration for Quill.js editors",
+  "description": "LanguageTool integration for Quill.js editors from vantezzen",
   "author": "vantezzen",
   "license": "MIT",
-  "repository": "vantezzen/quill-languagetool",
+  "repository": "asros/quill-languagetool",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
