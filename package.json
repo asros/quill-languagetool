@@ -1,6 +1,6 @@
 {
   "name": "asros-quill-languagetool",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "LanguageTool integration for Quill.js editors from vantezzen",
   "author": "vantezzen",
   "license": "MIT",
