@@ -17,8 +17,18 @@ export default class PopupManager {
   constructor(private readonly parent: QuillLanguageTool) {
     this.closePopup = this.closePopup.bind(this);
     this.addEventHandler();
+    this.addOutsideClickListener();
   }
 
+  private addOutsideClickListener() {
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (this.openPopup && !this.openPopup.contains(target) && target !== this.currentSuggestionElement) {
+        this.closePopup();
+      }
+    });
+  }
+  
   private addEventHandler() {
     this.parent.quill.root.addEventListener("click", (e) => {
       const target = e.target as HTMLElement;
@@ -55,6 +65,8 @@ export default class PopupManager {
     }
 
     this.createSuggestionPopup(rule, suggestion);
+
+    this.currentSuggestionElement = suggestion;
   }
 
   private updateOffsets(replacementLength: number, originalLength: number, startOffset: number) {
